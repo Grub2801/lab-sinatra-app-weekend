@@ -1,0 +1,39 @@
+<h2>Edit Lawyer</h2>
+
+<%= @lawyer.id %>
+
+<form class="form lawyer" id="update-lawyer" method="POST" action="/lawyers/<%= @lawyer.id %>/update">
+
+  <div class="form-group">
+    <label for="lawyer-name">Name:</label>
+    <input class="form-control" type="test" name="lawyer[name]" id="lawyer_name" value="<%= @lawyer.name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="lawyer_qualification_area">Area of Qualification:</label>
+    <input class="form-control" type="text" name="lawyer[qualification_area]" id="lawyer_qualification_area" value="<%= @lawyer.qualification_area %>">
+  </div>
+
+  <div class="form-group">
+    <label for="lawyer_qualification_year">Year of Qualification:</label>
+    <input class="form-control" type="text" name="lawyer[qualification_year]" id="lawyer_qualification_year" value="<%= @lawyer.qualification_year %>">
+  </div>
+
+  <div class="form-group">
+    <label for="lawyer_company">Company:</label>
+    <input class="form-control" type="text" name="lawyer[company]" id="lawyer_company" value="<%= @lawyer.company %>">
+  </div>
+
+  <div class="form-group">
+    <label for="lawyer_location">Location:</label>
+    <input class="form-control" type="text" name="lawyer[location]" id="lawyer_location" value="<%= @lawyer.location %>">
+  </div>
+
+  <div class="form-group">
+    <label for="lawyer_email">Location:</label>
+    <input class="form-control" type="text" name="lawyer[email]" id="lawyer_email" value="<%= @lawyer.email %>">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update Lawyer</button>
+
+</form>

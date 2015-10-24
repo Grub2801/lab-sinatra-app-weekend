@@ -1,0 +1,20 @@
+<ul class="lawyers">
+<h2>Lawyers</h2>
+  <% @lawyers.each do |lawyer| %>
+    <li>
+      <strong>
+        <a href="/lawyers/<%= lawyer.id %>"><%= lawyer.to_s %></a>
+      </strong>
+
+      <a href="/lawyers/<%= lawyer.id %>/edit">Edit</a>
+
+      <form action="/lawyers/<%= lawyer.id %>/delete" method="POST">
+        <input type="submit" value="Delete lawyer">
+      </form>
+    </li>
+  <% end %>
+</ul>
+
+<hr/>
+
+<a class="btn" href="/lawyers/new">Add Lawyer</a>
