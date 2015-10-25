@@ -1,5 +1,6 @@
-<ul class="lawyers">
 <h2>Lawyers</h2>
+
+<ul class="lawyers">
   <% @lawyers.each do |lawyer| %>
     <li>
       <strong>
@@ -8,8 +9,9 @@
 
       <a href="/lawyers/<%= lawyer.id %>/edit">Edit</a>
 
-      <form action="/lawyers/<%= lawyer.id %>/delete" method="POST">
-        <input type="submit" value="Delete lawyer">
+      <form action="/lawyers/<%= lawyer.id %>/delete" method="post">
+
+        <input type="submit" value="Delete Lawyer">
       </form>
     </li>
   <% end %>

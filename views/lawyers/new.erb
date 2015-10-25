@@ -1,37 +1,38 @@
-n<h2>New Lawyer</h2>
+<h2>New Lawyer</h2>
 
-<form class="form lawyer" id="update-lawyer" method="POST" action="/lawyers/<%= @lawyer.id %>/update">
+<form class="form lawyer" id="add-lawyer" method="post" action="/lawyers">
 
   <div class="form-group">
-    <label for="lawyer-name">Name:</label>
-    <input class="form-control" type="test" name="lawyer[name]" id="lawyer_name">
+    <label for="lawyer[name]">Name:</label>
+    <input class="form-control" type="text" name="lawyer[name]" id="lawyer_name">
   </div>
 
   <div class="form-group">
-    <label for="lawyer_qualification_area">Area of Qualification:</label>
+    <label for="lawyer[qualification_area]">Area of Qualification:</label>
     <input class="form-control" type="text" name="lawyer[qualification_area]" id="lawyer_qualification_area">
   </div>
 
   <div class="form-group">
-    <label for="lawyer_qualification_year">Year of Qualification:</label>
-    <input class="form-control" type="text" name="lawyer[qualification_year]" id="lawyer_qualification_year">
+    <label for="lawyer[qualification_year]">Year of Qualification:</label>
+    <input class="form-control" type="data" name="lawyer[qualification_year]" id="lawyer_qualification_year">
   </div>
 
   <div class="form-group">
-    <label for="lawyer_company">Company:</label>
+    <label for="lawyer[company]">Company:</label>
     <input class="form-control" type="text" name="lawyer[company]" id="lawyer_company">
   </div>
 
   <div class="form-group">
-    <label for="lawyer_location">Location:</label>
+    <label for="lawyer[location]">Location:</label>
     <input class="form-control" type="text" name="lawyer[location]" id="lawyer_location">
   </div>
 
   <div class="form-group">
-    <label for="lawyer_email">Location:</label>
-    <input class="form-control" type="text" name="lawyer[email]" id="lawyer_email">
+    <label for="lawyer[phone]">Phone:</label>
+    <input class="form-control" type="text" name="lawyer[phone]" id="lawyer_phone">
   </div>
 
-  <button type="submit" class="btn btn-primary">Add Lawyer</button>
-
+  <div>
+    <input type="submit" value="Add Lawyer" class="btn">
+  </div>
 </form>

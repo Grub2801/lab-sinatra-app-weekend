@@ -1,58 +1,57 @@
-class LawyerApp < Sinatra::Base
+class LawyersApp < Sinatra::Base
 
 #root route
-get '/' do
+get "/" do
   redirect('/lawyers')
 end
 
 #about page
-get '/about' do
+get "/about" do
   erb(:about)
 end
 
 #index
 get '/lawyers' do
-  @lawyer = Lawyer.all
+  @lawyers = Lawyer.all
   erb(:"lawyers/index")
 end
 
 #new
-get 'lawyers/new' do
+get '/lawyers/new' do
   @lawyer = Lawyer.new
   erb(:"lawyers/new")
 end
 
 #create
 post '/lawyers' do
-  @lawyer.new(params[:lawyer])
+  @lawyer = Lawyer.new(params[:lawyer])
   if @lawyer.save
-    redirect('/lawyer/#{@lawyer.id}')
+    redirect("/lawyers/#{@lawyer.id}")
   else
-    erb(:'lawyer/new')
+    erb(:"lawyers/new")
   end
 end
 
 #show
 get '/lawyers/:id' do
   @lawyer = Lawyer.find(params[:id])
-  erb(:'lawyer/show')
+  erb(:"lawyers/show")
 end
 
 #edit
 get '/lawyers/:id/edit' do
   @lawyer = Lawyer.find(params[:id])
-  erb(:'lawyers/edit')
+  erb(:"lawyers/edit")
 end
 
 #update
-post '/lawyers/:id/update' do
+put '/lawyers/:id' do
   @lawyer = Lawyer.find(params[:id])
-  @lawyer.update_attributes(params[:lawyer])
-    if @lawyer.save
-      redirect('/lawyers')
-    else
-      erb(:'lawyers/new')
-    end
+  if @lawyer.update_attributes(params[:lawyer])
+    redirect("/lawyers")
+  else
+    erb(:"lawyers/new")
+  end
 end
 
 #destroy
@@ -61,8 +60,7 @@ post '/lawyers/:id/delete' do
   if @lawyer.destroy
     redirect('/lawyers')
   else
-    redirect('/lawyers/#{@lawyer.id}')
+    redirect("/lawyers/#{@lawyer.id}")
   end
 end
-
 end

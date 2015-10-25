@@ -8,4 +8,5 @@ require './models/lawyer'
 # Controllers
 require './app'
 
+use Rack::MethodOverride
 run LawyersApp
